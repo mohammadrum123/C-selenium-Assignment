@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System;
 using java.lang;
@@ -195,24 +195,26 @@ namespace SeleniumAssignment
         public void ExerciseFive()
         {
             driver.FindElement(By.Id("openwindow")).Click();
-            Thread.sleep(1000);
+            Thread.sleep(3500);
             driver.SwitchTo().Window(driver.WindowHandles[0]);
         }
         public void ExerciseSix()
         {
             driver.FindElement(By.CssSelector("#opentab")).Click();
-            Thread.sleep(1000);
-            driver.SwitchTo().Window(driver.WindowHandles[1]).Close();
+            Thread.sleep(3500);
             driver.SwitchTo().Window(driver.WindowHandles[0]);
         }
 
         public void ExerciseSeven()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             driver.FindElement(By.CssSelector("#name")).SendKeys("Rumaiz");
             Thread.sleep(1000);
             driver.FindElement(By.CssSelector("#alertbtn")).Click();
             Thread.sleep(1000);
             driver.SwitchTo().Alert().Accept();
+            Console.WriteLine("Switch to Alert is working");
+            Console.ResetColor();
 
         }
         public void ExerciseEight()
@@ -223,6 +225,7 @@ namespace SeleniumAssignment
         }
         public void ExerciseNine()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript(System.String.Format("window.scrollTo({0}, {1})", 400, 1000));
             Thread.sleep(1000);
@@ -233,6 +236,8 @@ namespace SeleniumAssignment
             action.MoveToElement(element).Perform();
             action.MoveToElement(element1).Perform();
             element1.Click();
+            Console.WriteLine("Mouse Hover is Working");
+            Console.ResetColor();
             
         }
         static void Main(string[] args)
@@ -247,57 +252,57 @@ namespace SeleniumAssignment
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Exercise One");
             Console.ResetColor();
-            //o.ExerciseOne(1);
-            //Thread.sleep(1000);
-            //o.ExerciseOne(2);
-            //Thread.sleep(1000);
-            //o.ExerciseOne(3);
+            o.ExerciseOne(1);
+            Thread.sleep(1000);
+            o.ExerciseOne(2);
+            Thread.sleep(1000);
+            o.ExerciseOne(3);
             Console.WriteLine("");
 
             //Exercise Two
-            //Thread.sleep(2000);
+            Thread.sleep(2000);
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Exercise Two");
+            //Console.WriteLine("Exercise Two");
             Console.ResetColor();
-            //o.ExerciseTwo();
-            //Thread.sleep(1000);
+            o.ExerciseTwo();
+            Thread.sleep(1000);
             Console.WriteLine("");
 
             //Exercise Three
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Exercise Three");
+            //Console.WriteLine("Exercise Three");
             Console.ResetColor();
-            //o.ExerciseThree();
-            //Thread.sleep(1000);
+            o.ExerciseThree();
+            Thread.sleep(1000);
             Console.WriteLine("");
 
             //Exercise Four
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Exercise Four");
             Console.ResetColor();
-            //o.ExerciseFour();
-            //Thread.sleep(1000);
+            o.ExerciseFour();
+            Thread.sleep(1000);
             Console.WriteLine("");
 
             //Exercise FourPointOne
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Exercise FourPointOne");
             Console.ResetColor();
-            //o.ExerciseFourPointOne();
-            //Thread.sleep(1000);
+            o.ExerciseFourPointOne();
+            Thread.sleep(1000);
             Console.WriteLine("");
 
             //Exercise FourPointTwo
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Exercise FourPointTwo");
             Console.ResetColor();
-            //o.ExerciseFourPointTwo();
-            //Thread.sleep(1000);
+            o.ExerciseFourPointTwo();
+            Thread.sleep(1000);
             Console.WriteLine("");
 
             //Exercise Five
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Exercise Five");
+            //Console.WriteLine("Exercise Five");
             Console.ResetColor();
             o.ExerciseFive();
             Thread.sleep(1000);
@@ -305,7 +310,7 @@ namespace SeleniumAssignment
 
             //Exercise Six
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Exercise Six");
+            //Console.WriteLine("Exercise Six");
             Console.ResetColor();
             o.ExerciseSix();
             Thread.sleep(1000);
@@ -321,18 +326,18 @@ namespace SeleniumAssignment
 
             //Exercise Eight
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Exercise Eight");
+            //Console.WriteLine("Exercise Eight");
             Console.ResetColor();
-            //o.ExerciseEight();
-            //Thread.sleep(1000);
+            o.ExerciseEight();
+            Thread.sleep(1000);
             Console.WriteLine("");
 
             //Exercise Nine
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Exercise Nine");
             Console.ResetColor();
-            //o.ExerciseNine();
-            //Thread.sleep(1000);
+            o.ExerciseNine();
+            Thread.sleep(1000);
             Console.WriteLine("");
             driver.Quit();
 
